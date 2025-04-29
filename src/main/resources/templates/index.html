@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" />
+	<script th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+
+	<title>SpringApp + MongoDB + Docker</title>
+
+	<style>
+		body {
+          background-color: #f8f9fa;
+          font-family: Arial, sans-serif;
+        }
+
+        header {
+          margin-bottom: 30px;
+        }
+
+        .container-center {
+          text-align: center;
+        }
+
+        h1, h3 {
+          white-space: nowrap;
+          font-weight: bold;
+          color: #007bff;
+        }
+
+        .form-container {
+          max-width: 600px;
+          margin: 0 auto;
+          background: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+          text-align: left;
+        }
+
+        label {
+          font-weight: bold;
+        }
+
+        table {
+          width: 100%;
+          margin-top: 20px;
+        }
+
+        .thead-dark {
+          background-color: #343a40;
+          color: white;
+        }
+
+        footer {
+          margin-top: 50px;
+          padding-top: 20px;
+          border-top: 1px solid #dee2e6;
+          background-color: #ffffff;
+        }
+
+        img {
+          margin-bottom: 10px;
+          height: 40px;
+          width: auto;
+        }
+	</style>
+</head>
+
+<body>
+
+<div class="container thedevroom container-center">
+
+	<header>
+		<h1>SpringApp + MongoDB + Docker</h1>
+		<p class="lead">A simple CRUD application using Spring Boot and MongoDB</p>
+	</header>
+
+	<!-- Add New User -->
+	<div class="form-container">
+		<h3>Add New User</h3>
+		<form name="saveUser" action="/save" method="post">
+			<div class="form-group">
+				<label for="firstName">First Name</label>
+				<input type="text" id="firstName" name="firstName" class="form-control" placeholder="First Name" />
+			</div>
+			<div class="form-group">
+				<label for="lastName">Last Name</label>
+				<input type="text" id="lastName" name="lastName" class="form-control" placeholder="Last Name" />
+			</div>
+			<div class="form-group">
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" class="form-control" placeholder="Email" />
+			</div>
+			<div class="text-center">
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</div>
+		</form>
+	</div>
+
+	<!-- Saved Users -->
+	<div class="form-container" style="margin-top: 40px;">
+		<h3>Saved Users</h3>
+		<table id="usersTable" class="table table-bordered table-hover">
+			<thead class="thead-dark">
+			<tr>
+				<th>ID</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+			</tr>
+			</thead>
+			<tbody>
+			<!-- Rows will be added dynamically -->
+			</tbody>
+		</table>
+	</div>
+
+	<!-- Footer -->
+	<footer class="text-center thedevroom pt-4">
+		<div>
+			<img th:src="@{/img/TheDevRoom.png}" alt="logo" />
+			<h4>TheDevRoom</h4>
+			<p>Phone: +91 9999999999</p>
+			<p>&copy; 2025 by <a href="https://github.com/localhost-devel/localhost-devel/blob/master/README.md" target="_blank">TheDevRoom</a></p>
+		</div>
+	</footer>
+
+</div>
+
+<script>
+	$(document).ready(function () {
+      $.ajax({
+        url: "/api/users",
+        success: function (response) {
+          $.each(response, function (i, item) {
+            var row = $("<tr />");
+            $("#usersTable tbody").append(row);
+            row.append($("<td>").text(item.id));
+            row.append($("<td>").text(item.firstName));
+            row.append($("<td>").text(item.lastName));
+            row.append($("<td>").text(item.email));
+          });
+        }
+      });
+    });
+</script>
+
+</body>
+</html>

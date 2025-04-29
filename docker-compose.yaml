@@ -1,0 +1,36 @@
+version: '3.8'  # Use 3.8 or 3.9 if available
+
+services:
+  springapp:
+    image: thedevroom/spring-boot-mongo-application:1
+    restart: always
+    environment:
+      - MONGO_DB_HOSTNAME=mongo
+      - MONGO_DB_USERNAME=dbuser
+      - MONGO_DB_PASSWORD=dbadmin@123
+    ports:
+      - 9090:8080
+    working_dir: /opt/app
+    depends_on:
+      - mongo
+    networks:
+      - appnetwork
+
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=dbuser
+      - MONGO_INITDB_ROOT_PASSWORD=dbadmin@123
+    volumes:
+      - mongodb:/data/db
+    networks:
+      - appnetwork
+
+volumes:
+  mongodb:
+    external: false  # Create volume automatically
+
+networks:
+  appnetwork:
+    external: false  # Create network automatically
