@@ -11,8 +11,6 @@ Ensure the following tools are installed on your system:
 - 🐳 [Docker](https://docs.docker.com/get-docker/)
 - ☕ Java (JDK 8 or later)
 - 🛠️ [Maven](https://maven.apache.org/install.html)
-- 📦 **Spring Boot Application Repository** – Clone the application repository from GitHub:
-    - [springboot-mongodb-app](https://github.com/localhost-devel/springboot-mongodb-app.git)
 
 
 ---

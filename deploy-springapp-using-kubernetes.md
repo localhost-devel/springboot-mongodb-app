@@ -14,9 +14,6 @@ Ensure the following tools are installed on your system:
     - 📘 [Minikube Setup Guide](https://github.com/localhost-devel/localhost/blob/master/TheDevRoom/kubernetes-setup/setup_minikube.md)
     - 📘 [MicroK8s Setup Guide](https://github.com/localhost-devel/localhost/blob/master/TheDevRoom/kubernetes-setup/setup_microk8s.md)
 - 🔧 **kubectl** – Command-line tool to manage Kubernetes resources.
-- 📦 **Spring Boot Application Repository** – Clone the application repository from GitHub:
-  - [springboot-mongodb-app](https://github.com/localhost-devel/springboot-mongodb-app.git)
-
 ---
 
 ## 🔨 1. Build the Spring Boot Project

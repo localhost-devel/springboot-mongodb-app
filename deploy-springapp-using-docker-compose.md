@@ -11,9 +11,6 @@ Ensure the following tools are installed on your system:
 - 🐳 **Docker** – [Install Docker](https://docs.docker.com/get-docker/)
 - ☕ **Java** and **Maven** – For building the Spring Boot project
 - 📦 **docker-compose** – [Install Compose](https://docs.docker.com/compose/install/)
-- 📦 **Spring Boot Application Repository** – Clone the application repository from GitHub:
-    - [springboot-mongodb-app](https://github.com/localhost-devel/springboot-mongodb-app.git)
-
 ---
 
 ## 🔨 1. Build the Spring Boot Project
