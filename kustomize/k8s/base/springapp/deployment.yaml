@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springapp
+  namespace: app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: springapp
+  template:
+    metadata:
+      labels:
+        app: springapp
+    spec:
+      containers:
+        - name: springapp-container
+          image: <registry/image:tag>
+          ports:
+            - containerPort: 8080
+          env:
+            - name: MONGO_DB_HOSTNAME
+              value: db-service
+            - name: MONGO_DB_USERNAME
+              value: dbuser
+            - name: MONGO_DB_PASSWORD
+              value: dbadmin@123

@@ -1,0 +1,9 @@
+# Patch Image Version
+- op: replace
+  path: /spec/template/spec/containers/0/image
+  value: thedevroom/spring-boot-mongo-application:1
+
+# Patch desired number of replicas
+- op: replace
+  path: /spec/replicas
+  value: 1
