@@ -111,7 +111,7 @@ kubectl get pods -n app
 ### Step 2: Access the Pod shell
 
 ```bash
-kubectl exec -it <springapp-pod-name> -n app -- /bin/sh
+kubectl exec -it <pod-name> -n app -- /bin/sh
 ```
 
 Example:
