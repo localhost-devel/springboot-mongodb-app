@@ -1,0 +1,35 @@
+namespace: app
+environment: dev
+
+springapp:
+  image: thedevroom/spring-boot-mongo-application:1
+  replicas: 1
+  port: 8080
+  env:
+    mongoHost: db-service
+    mongoUser: dbuser
+    mongoPass: dbadmin@123
+  resources:
+    limits:
+      cpu: "300m"
+      memory: "256Mi"
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+  hpa:
+    enabled: false
+
+mongo:
+  image: mongo
+  replicas: 1
+  port: 27017
+  env:
+    rootUser: dbuser
+    rootPass: dbadmin@123
+  resources:
+    limits:
+      cpu: "200m"
+      memory: "256Mi"
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
