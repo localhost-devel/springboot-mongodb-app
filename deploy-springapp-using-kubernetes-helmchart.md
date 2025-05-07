@@ -17,7 +17,6 @@ By the end of this tutorial, you'll be able to:
 helmchart/
 ├── Chart.yaml
 ├── values-dev.yaml
-├── values-prod.yaml
 ├── charts/
 └── templates/
     ├── deployment-springpapp.yaml
@@ -29,7 +28,9 @@ helmchart/
 ---
 ## 🛠 Prerequisites
 - Docker
-- Kubernetes cluster (Minikube, KIND, or cloud-based)
+- Kubernetes Cluster – You can use Minikube for local development.
+    - 📘 [Minikube Setup Guide](https://github.com/localhost-devel/localhost/blob/master/TheDevRoom/kubernetes-setup/setup_minikube.md)
+    - 📘 [MicroK8s Setup Guide](https://github.com/localhost-devel/localhost/blob/master/TheDevRoom/kubernetes-setup/setup_microk8s.md)
 - `kubectl` CLI
 - `helm` CLI (v3+)
 - Maven
