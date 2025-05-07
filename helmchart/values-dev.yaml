@@ -1,0 +1,19 @@
+namespace: app
+environment: dev
+
+springapp:
+  image: thedevroom/spring-boot-mongo-application:1
+  replicas: 1
+  port: 8080
+  env:
+    mongoHost: db-service
+    mongoUser: dbuser
+    mongoPass: dbadmin@123
+
+mongo:
+  image: mongo
+  replicas: 1
+  port: 27017
+  env:
+    rootUser: dbuser
+    rootPass: dbadmin@123

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springapp
+  namespace: {{ .Values.namespace }}
+spec:
+  replicas: {{ .Values.springapp.replicas }}
+  selector:
+    matchLabels:
+      app: springapp
+  template:
+    metadata:
+      labels:
+        app: springapp
+    spec:
+      containers:
+        - name: springapp-container
+          image: {{ .Values.springapp.image }}
+          ports:
+            - containerPort: {{ .Values.springapp.port }}
+          env:
+            - name: MONGO_DB_HOSTNAME
+              value: {{ .Values.springapp.env.mongoHost }}
+            - name: MONGO_DB_USERNAME
+              value: {{ .Values.springapp.env.mongoUser }}
+            - name: MONGO_DB_PASSWORD
+              value: {{ .Values.springapp.env.mongoPass }}
