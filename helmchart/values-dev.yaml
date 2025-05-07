@@ -9,15 +9,6 @@ springapp:
     mongoHost: db-service
     mongoUser: dbuser
     mongoPass: dbadmin@123
-  resources:
-    limits:
-      cpu: "300m"
-      memory: "256Mi"
-    requests:
-      cpu: "100m"
-      memory: "128Mi"
-  hpa:
-    enabled: false
 
 mongo:
   image: mongo
@@ -26,10 +17,3 @@ mongo:
   env:
     rootUser: dbuser
     rootPass: dbadmin@123
-  resources:
-    limits:
-      cpu: "200m"
-      memory: "256Mi"
-    requests:
-      cpu: "100m"
-      memory: "128Mi"

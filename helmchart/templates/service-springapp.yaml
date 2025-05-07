@@ -2,15 +2,11 @@ apiVersion: v1
 kind: Service
 metadata:
   name: springapp-service
-  namespace: {{ include "springboot-mongo.namespace" . }}
-  labels:
-    app: springapp
-    env: {{ .Values.environment }}
+  namespace: {{ .Values.namespace }}
 spec:
   selector:
     app: springapp
-    env: {{ .Values.environment }}
   ports:
     - port: 80
-      targetPort: {{ .Values.springapp.port }}
+      targetPort: 8080
   type: NodePort

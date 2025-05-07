@@ -20,10 +20,8 @@ helmchart/
 ├── values-prod.yaml
 ├── charts/
 └── templates/
-    ├── _helpers.tpl
     ├── deployment-springpapp.yaml
     ├── service-springapp.yaml
-    ├── hpa-springpapp.yaml
     ├── deployment-mongodb.yaml
     ├── service-mongodb.yaml
 ```
@@ -77,17 +75,9 @@ Edit `helmchart/values-dev.yaml` to adjust:
 helm install springboot-mongo ./helmchart --values helmchart/values-dev.yaml --dry-run --debug
 ```
 
-```bash
-helm install springboot-mongo ./helmchart --values helmchart/values-prod.yaml --dry-run --debug
-```
-
 ### Render templates
 ```bash
 helm template springboot-mongo ./helmchart --values helmchart/values-dev.yaml
-```
-
-```bash
-helm template springboot-mongo ./helmchart --values helmchart/values-prod.yaml
 ```
 
 ---
