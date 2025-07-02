@@ -17,8 +17,9 @@ Kustomize is a configuration management tool built into `kubectl` that allows yo
 
 ---
 ## 🛠 Prerequisites
-- Docker
-- Kubernetes cluster (Minikube, KIND, or cloud-based)
+- 🐳 [Docker](https://github.com/localhost-devel/thedevroom/blob/master/TheDevRoom/docker/docker.md#-installation-guide)
+- Kubernetes Cluster – You can use Minikube for local development.
+    - 📘 [Minikube Setup Guide](hhttps://github.com/localhost-devel/thedevroom/blob/master/TheDevRoom/kubernetes-setup/setup-k8s/setup_minikube.md)
 - `kubectl` CLI
 - `kustomize` or `kubectl` with built-in Kustomize support
 - Maven
