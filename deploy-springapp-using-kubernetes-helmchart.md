@@ -27,10 +27,9 @@ helmchart/
 
 ---
 ## 🛠 Prerequisites
-- Docker
+- 🐳 [Docker](https://github.com/localhost-devel/thedevroom/blob/master/TheDevRoom/docker/docker.md#-installation-guide)
 - Kubernetes Cluster – You can use Minikube for local development.
-    - 📘 [Minikube Setup Guide](https://github.com/localhost-devel/localhost/blob/master/TheDevRoom/kubernetes-setup/setup_minikube.md)
-    - 📘 [MicroK8s Setup Guide](https://github.com/localhost-devel/localhost/blob/master/TheDevRoom/kubernetes-setup/setup_microk8s.md)
+  - 📘 [Minikube Setup Guide](hhttps://github.com/localhost-devel/thedevroom/blob/master/TheDevRoom/kubernetes-setup/setup-k8s/setup_minikube.md)
 - `kubectl` CLI
 - `helm` CLI (v3+)
 - Maven

@@ -8,11 +8,10 @@ This guide helps you deploy a **Spring Boot application** with **MongoDB** on a 
 
 Ensure the following tools are installed on your system:
 
-- 🐳 **Docker** – For container image building and pushing.
+- 🐳 [Docker](https://github.com/localhost-devel/thedevroom/blob/master/TheDevRoom/docker/docker.md#-installation-guide)
+- Kubernetes Cluster – You can use Minikube for local development.
+  - 📘 [Minikube Setup Guide](hhttps://github.com/localhost-devel/thedevroom/blob/master/TheDevRoom/kubernetes-setup/setup-k8s/setup_minikube.md)
 - ☕ **Java & Maven** – To build the Spring Boot application.
-- ☸️ **Kubernetes Cluster** – You can use Minikube for local development.
-    - 📘 [Minikube Setup Guide](https://github.com/localhost-devel/localhost/blob/master/TheDevRoom/kubernetes-setup/setup_minikube.md)
-    - 📘 [MicroK8s Setup Guide](https://github.com/localhost-devel/localhost/blob/master/TheDevRoom/kubernetes-setup/setup_microk8s.md)
 - 🔧 **kubectl** – Command-line tool to manage Kubernetes resources.
 ---
 
